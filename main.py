@@ -5,25 +5,24 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
+import threading
+from flask import Flask
 
-# Gmail credentials (use Gmail App Password, not normal password)
+app = Flask(__name__)
+
 EMAIL_ADDRESS = 'vigneshmudhale777@gmail.com'
 EMAIL_PASSWORD = 'yillyowmajucuagr'
 
-# List of recipients
 recipient_list = [
     'support@dbatu.ac.in',
     'dbatu_suport@unisuite.in',
     'gaminghatyar777@gmail.com',
     'exam@dbatu.ac.in',
     'smpore@dbatu.ac.in'
-    # ''
 ]
 
-# Subject
 subject = "MSI पोर्टलवरील चुकीची बॅकलॉग माहिती व फी संदर्भातील अडचण – विनंती"
 
-# Email body (Marathi) with notice
 body = """
 
 आदरणीय परीक्षा नियंत्रक महोदय/महोदया,
@@ -62,15 +61,12 @@ Ashokrao Mane Group of Institutions (AMGOI),
 
 Without your reply this bot is the not stopend 
 """
-
 document_paths = [
-    r"documents for the dbatu/BTBS301 Engineering Mathematics-III.csv",
-    r"documents for the dbatu/BTEXC302 Electronic Devices & Circuits.csv",
-    r"documents for the dbatu/Not showing the remedial form 3rd sem .jpg"
+    "documents/BTBS301 Engineering Mathematics-III.csv",
+    "documents/BTEXC302 Electronic Devices & Circuits.csv",
+    "documents/Not showing the remedial form 3rd sem .jpg"
 ]
 
-
-# Function to send emails
 def send_email():
     for recipient in recipient_list:
         try:
@@ -80,7 +76,6 @@ def send_email():
             msg['Subject'] = subject
             msg.attach(MIMEText(body, 'plain'))
 
-            # Attach all documents
             for doc_path in document_paths:
                 if os.path.exists(doc_path):
                     with open(doc_path, "rb") as f:
@@ -90,7 +85,6 @@ def send_email():
                 else:
                     print(f"⚠️ File not found: {doc_path}")
 
-            # Send via Gmail SMTP
             with smtplib.SMTP('smtp.gmail.com', 587) as server:
                 server.starttls()
                 server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
@@ -100,12 +94,20 @@ def send_email():
         except Exception as e:
             print(f"❌ Failed to send email to {recipient}: {e}")
 
-# Schedule every 1800 seconds for testing (change to .hours for real deployment)
+# Schedule every 1800 seconds (30 min)
 schedule.every(1800).seconds.do(send_email)
 
-print("📧 Auto Email Bot Started... Will send every 1800 seconds (test mode).")
+def scheduler_loop():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
-# Keep running
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Start scheduler in background thread
+threading.Thread(target=scheduler_loop, daemon=True).start()
+
+@app.route('/')
+def home():
+    return "📧 Auto Email Sender is Running on Koyeb with Port 8080"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

@@ -14,11 +14,11 @@ EMAIL_ADDRESS = 'vigneshmudhale777@gmail.com'
 EMAIL_PASSWORD = 'yillyowmajucuagr'
 
 recipient_list = [
-    'support@dbatu.ac.in',
-    'dbatu_suport@unisuite.in',
+    # 'support@dbatu.ac.in',
+    # 'dbatu_suport@unisuite.in',
     'gaminghatyar777@gmail.com',
-    'exam@dbatu.ac.in',
-    'smpore@dbatu.ac.in'
+    # 'exam@dbatu.ac.in',
+    # 'smpore@dbatu.ac.in'
 ]
 
 subject = "MSI पोर्टलवरील चुकीची बॅकलॉग माहिती व फी संदर्भातील अडचण – विनंती"
@@ -98,7 +98,7 @@ def send_email():
             print(f"❌ Failed to send email to {recipient}: {e}")
 
 # Schedule every 1800 seconds (30 min)
-schedule.every(1800).seconds.do(send_email)
+schedule.every(10).seconds.do(send_email)
 
 def scheduler_loop():
     while True:

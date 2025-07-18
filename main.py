@@ -64,7 +64,7 @@ Without your reply this bot is the not stopend
 """
 
 document_paths = [
-    r"C:\Users\admin\Downloads\documents for the dbatu\BTBS301 Engineering Mathematics-III.csv",
+    r"documents for the dbatu/BTBS301 Engineering Mathematics-III.csv",
     r"C:\Users\admin\Downloads\documents for the dbatu\Not showing the remedial form 3rd sem .jpg",
     r"C:\Users\admin\Downloads\documents for the dbatu\BTEXC302 Electronic Devices & Circuits.csv"
 ]

@@ -62,9 +62,9 @@ Ashokrao Mane Group of Institutions (AMGOI),
 Without your reply this bot is the not stopend 
 """
 document_paths = [
-    "documents/BTBS301 Engineering Mathematics-III.csv",
-    "documents/BTEXC302 Electronic Devices & Circuits.csv",
-    "documents/Not showing the remedial form 3rd sem .jpg"
+    r"documents/BTBS301 Engineering Mathematics-III.csv",
+    r"documents/BTEXC302 Electronic Devices & Circuits.csv",
+    r"documents/Not showing the remedial form 3rd sem .jpg"
 ]
 
 def send_email():

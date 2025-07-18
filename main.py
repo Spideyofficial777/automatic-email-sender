@@ -16,7 +16,7 @@ EMAIL_PASSWORD = 'yillyowmajucuagr'
 recipient_list = [
     'support@dbatu.ac.in',
     'dbatu_suport@unisuite.in',
-    'gaminghatyar777@gmail.com',
+    'acoe_engg@dbatu.ac.in',
     'exam@dbatu.ac.in',
     'smpore@dbatu.ac.in'
 ]

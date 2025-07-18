@@ -1,5 +1,4 @@
 schedule
-time
 python-dotenv
 requests
 telethon

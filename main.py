@@ -18,7 +18,8 @@ recipient_list = [
     'dbatu_suport@unisuite.in',
     'acoe_engg@dbatu.ac.in',
     'exam@dbatu.ac.in',
-    'smpore@dbatu.ac.in'
+    'smpore@dbatu.ac.in',
+    'coe@dbatu.ac.in'
 ]
 
 subject = "MSI पोर्टलवरील चुकीची बॅकलॉग माहिती व फी संदर्भातील अडचण – विनंती"

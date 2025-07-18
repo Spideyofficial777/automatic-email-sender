@@ -14,11 +14,11 @@ EMAIL_ADDRESS = 'vigneshmudhale777@gmail.com'
 EMAIL_PASSWORD = 'yillyowmajucuagr'
 
 recipient_list = [
-    # 'support@dbatu.ac.in',
-    # 'dbatu_suport@unisuite.in',
+    'support@dbatu.ac.in',
+    'dbatu_suport@unisuite.in',
     'gaminghatyar777@gmail.com',
-    # 'exam@dbatu.ac.in',
-    # 'smpore@dbatu.ac.in'
+    'exam@dbatu.ac.in',
+    'smpore@dbatu.ac.in'
 ]
 
 subject = "MSI पोर्टलवरील चुकीची बॅकलॉग माहिती व फी संदर्भातील अडचण – विनंती"

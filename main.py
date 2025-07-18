@@ -98,7 +98,7 @@ def send_email():
             print(f"❌ Failed to send email to {recipient}: {e}")
 
 # Schedule every 1800 seconds (30 min)
-schedule.every(10).seconds.do(send_email)
+schedule.every(1800).seconds.do(send_email)
 
 def scheduler_loop():
     while True:

@@ -1,0 +1,8 @@
+smtplib
+email
+schedule
+time
+python-dotenv
+requests
+telethon
+pymongo

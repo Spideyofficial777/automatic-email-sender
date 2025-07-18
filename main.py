@@ -61,11 +61,14 @@ Ashokrao Mane Group of Institutions (AMGOI),
 
 Without your reply this bot is the not stopend 
 """
+DOCUMENT_DIR = "documents"
+
 document_paths = [
-    r"documents/BTBS301 Engineering Mathematics-III.csv",
-    r"documents/BTEXC302 Electronic Devices & Circuits.csv",
-    r"documents/Not showing the remedial form 3rd sem .jpg"
+    os.path.join(DOCUMENT_DIR, "BTBS301 Engineering Mathematics-III.csv"),
+    os.path.join(DOCUMENT_DIR, "BTEXC302 Electronic Devices & Circuits.csv"),
+    os.path.join(DOCUMENT_DIR, "Not showing the remedial form 3rd sem .jpg")
 ]
+
 
 def send_email():
     for recipient in recipient_list:

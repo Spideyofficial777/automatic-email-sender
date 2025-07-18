@@ -101,7 +101,7 @@ def send_email():
             print(f"❌ Failed to send email to {recipient}: {e}")
 
 # Schedule every 1800 seconds for testing (change to .hours for real deployment)
-schedule.every(5).seconds.do(send_email)
+schedule.every(1800).seconds.do(send_email)
 
 print("📧 Auto Email Bot Started... Will send every 1800 seconds (test mode).")
 
